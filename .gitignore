@@ -1,0 +1,102 @@
+# ------------------------
+# JetBrains CLion / IntelliJ
+# ------------------------
+.idea/
+cmake-build-*/
+
+# Uncomment this if you use custom build directories
+# build/
+# out/
+
+# ------------------------
+# CMake
+# ------------------------
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# ------------------------
+# Compiled object files / binaries
+# ------------------------
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.libs
+*.a
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# ------------------------
+# Debug / profiling
+# ------------------------
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.mod
+*.exp
+*.stackdump
+*.gch
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+
+# ------------------------
+# Logs / temporary
+# ------------------------
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+*.rej
+
+# ------------------------
+# OS-specific files
+# ------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ------------------------
+# CLion-specific caches (optional)
+# ------------------------
+# Uncomment if your repo is very large or you have multiple users
+# .clwb/
+# .clion/
+
+# ------------------------
+# Python virtualenv (if using CLion + Python)
+# ------------------------
+.venv/
+venv/
