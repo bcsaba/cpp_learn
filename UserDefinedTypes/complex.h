@@ -15,9 +15,9 @@ namespace mycode {
         explicit complex(double r) :re{r}, im{0} {}
         complex() :re{0}, im{0} {}
         void real(const double r) {re = r;}
-        double real() const {return re;}
+        [[nodiscard]] double real() const {return re;}
         void imag(const double i) {im = i;}
-        double imag() const {return im;}
+        [[nodiscard]] double imag() const {return im;}
 
         complex& operator+=(const complex& c) {re += c.re; im += c.im; return *this;}
         complex& operator-=(const complex& c) {re -= c.re; im -= c.im; return *this;}
