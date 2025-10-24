@@ -58,5 +58,9 @@ int main() {
 
     std::cout << sqrt_sum(v) << " :: " << v.size() << std::endl;
 
+    auto v2 = Vector({3, 4, 5, 6, 7, 8});
+
+    std::cout << sqrt_sum(v2) << " :: " << v2.size() << std::endl;
+
     return mycode::main();
 }

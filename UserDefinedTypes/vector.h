@@ -5,13 +5,17 @@
 #ifndef USERDEFINEDTYPES_VECTOR_H
 #define USERDEFINEDTYPES_VECTOR_H
 
+#include <initializer_list>
+
 class Vector {
     double* elem;
     int sz;
 public:
     explicit Vector(int s);
-    double& operator[](int i);
-    int size();
+    Vector(std::initializer_list<double>);
+    double& operator[](int i) const;
+    [[nodiscard]] int size() const;
+    ~Vector();
 };
 
 #endif //USERDEFINEDTYPES_VECTOR_H
