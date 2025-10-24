@@ -7,16 +7,18 @@
 
 #include <initializer_list>
 
-class Vector {
-    double* elem;
-    int sz;
-public:
-    explicit Vector(int s);
-    Vector(std::initializer_list<double>);
-    double& operator[](int i) const;
-    [[nodiscard]] int size() const;
-    void push_back(double element);
-    ~Vector();
-};
+namespace mycode {
+    class Vector {
+        double* elem;
+        int sz;
+    public:
+        explicit Vector(int s);
+        Vector(std::initializer_list<double>);
+        double& operator[](int i) const;
+        [[nodiscard]] int size() const;
+        void push_back(double element);
+        ~Vector();
+    };
+}
 
 #endif //USERDEFINEDTYPES_VECTOR_H

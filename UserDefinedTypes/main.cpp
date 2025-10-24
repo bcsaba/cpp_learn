@@ -42,7 +42,7 @@ void vector_access(const VectorStuct v, const VectorStuct& rv, const VectorStuct
     int i3 = pv->size;  //access through pointer
 }
 
-double sqrt_sum(Vector& v) {
+double sqrt_sum(mycode::Vector& v) {
     double sum = 0;
     for (int i = 0; i != v.size(); ++i) {
         sum += sqrt(v[i]);
@@ -54,11 +54,11 @@ int main() {
     // VectorStuct v;
     // read_from_consol_and_sum(10, v.elements);
 
-    auto v = Vector(5);
+    auto v = mycode::Vector(5);
 
     std::cout << sqrt_sum(v) << " :: " << v.size() << std::endl;
 
-    auto v2 = Vector({3, 4, 5, 6, 7, 8});
+    auto v2 = mycode::Vector({3, 4, 5, 6, 7, 8});
 
     std::cout << sqrt_sum(v2) << " :: " << v2.size() << std::endl;
 
