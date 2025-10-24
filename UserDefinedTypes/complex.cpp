@@ -4,7 +4,7 @@
 #include <cmath>
 #include <complex>
 
-namespace My_code {
+namespace mycode {
     int main() {
         complex z {9, 0};
         auto z2 = my_sqrt(z);

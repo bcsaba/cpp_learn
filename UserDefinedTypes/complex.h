@@ -5,7 +5,7 @@
 #ifndef USERDEFINEDTYPES_COMPLEX_H
 #define USERDEFINEDTYPES_COMPLEX_H
 
-namespace My_code {
+namespace mycode {
     class complex {
     private:
         double re;

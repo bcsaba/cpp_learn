@@ -58,5 +58,5 @@ int main() {
 
     std::cout << sqrt_sum(v) << " :: " << v.size() << std::endl;
 
-    return My_code::main();
+    return mycode::main();
 }
