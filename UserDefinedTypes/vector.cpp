@@ -1,5 +1,6 @@
 #include "vector.h"
 
+#include <algorithm>
 #include <initializer_list>
 
 Vector::Vector(int s)
@@ -10,11 +11,8 @@ Vector::Vector(int s)
 }
 
 Vector::Vector(std::initializer_list<double> l)
-    :elem(elem = new double[l.size()]), sz(l.size()) {
-    int i = 0;
-    for (auto e : l) {
-        elem[i++] = e;
-    }
+    : elem{elem = new double[l.size()]}, sz{static_cast<int>(l.size())}{
+    std::copy(l.begin(), l.end(), elem);
 }
 
 double& Vector::operator[] (const int i) const {
