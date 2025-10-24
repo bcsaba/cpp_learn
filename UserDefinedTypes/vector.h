@@ -6,13 +6,12 @@
 #define USERDEFINEDTYPES_VECTOR_H
 
 class Vector {
-public:
-    Vector(int s);
-    double& operator[](int i);
-    int size();
-private:
     double* elem;
     int sz;
+public:
+    explicit Vector(int s);
+    double& operator[](int i);
+    int size();
 };
 
 #endif //USERDEFINEDTYPES_VECTOR_H

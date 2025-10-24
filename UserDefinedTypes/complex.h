@@ -12,7 +12,7 @@ namespace mycode {
         double im;
     public:
         complex(double r, double i) :re{r}, im{i} {}
-        complex(double r) :re{r}, im{0} {}
+        explicit complex(double r) :re{r}, im{0} {}
         complex() :re{0}, im{0} {}
         void real(const double r) {re = r;}
         double real() const {return re;}
