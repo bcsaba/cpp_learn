@@ -12,7 +12,7 @@ Vector::Vector(int s)
 
 Vector::Vector(std::initializer_list<double> l)
     : elem{elem = new double[l.size()]}, sz{static_cast<int>(l.size())}{
-    std::copy(l.begin(), l.end(), elem);
+    std::ranges::copy(l, elem);
 }
 
 double& Vector::operator[] (const int i) const {
