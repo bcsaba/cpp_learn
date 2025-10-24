@@ -62,5 +62,10 @@ int main() {
 
     std::cout << sqrt_sum(v2) << " :: " << v2.size() << std::endl;
 
+    v2.push_back(9);
+    v2.push_back(10);
+
+    std::cout << sqrt_sum(v2) << " :: " << v2.size() << std::endl;
+
     return mycode::main();
 }

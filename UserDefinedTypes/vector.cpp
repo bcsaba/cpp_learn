@@ -25,6 +25,17 @@ int Vector::size() const {
     return sz;
 }
 
+void Vector::push_back(double element) {
+    auto* a = new double[sz+1];
+    for (int i = 0; i != sz; ++i) {
+        a[i] = elem[i];
+    }
+    a[sz] = element;
+    delete[] elem;
+    elem = a;
+    sz++;
+}
+
 Vector::~Vector() {
     delete[] elem;
 }

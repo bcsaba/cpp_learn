@@ -15,6 +15,7 @@ public:
     Vector(std::initializer_list<double>);
     double& operator[](int i) const;
     [[nodiscard]] int size() const;
+    void push_back(double element);
     ~Vector();
 };
 
