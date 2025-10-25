@@ -12,5 +12,8 @@ add_executable(UserDefinedTypes main.cpp
         vector_container.h
         list_container.h
         list_container.cpp
-        class_hierarchies/shape.h
-        class_hierarchies/shape.cpp)
+        include/class_hierarchies/shape.h
+        include/class_hierarchies/shape.cpp)
+
+target_include_directories(UserDefinedTypes PRIVATE ${CMAKE_SOURCE_DIR}/include)
+

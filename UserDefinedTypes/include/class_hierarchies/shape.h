@@ -46,7 +46,7 @@ namespace shapes {
             centerPoint = to;
             std::cout << "Circle moved to: " << to << std::endl;
         }
-        virtual void draw() const override { std::cout << "Circle draw ..." << std::endl; }
+        virtual void draw() const override;
 
         void rotate(float angle) const override { std::cout << "Circle rotate with angle" << angle <<"..." << std::endl; };
     };
@@ -66,7 +66,7 @@ namespace shapes {
             std::cout << "Smiley moved to: " << to << std::endl;
         };
 
-        void draw() const override {std::cout << "Smiley draw ..." << std::endl;}
+        void draw() const override;
 
         inline void rotate(float angle) const override { std::cout << "Smiley rotate with angle" << angle <<"..." << std::endl; };
 
