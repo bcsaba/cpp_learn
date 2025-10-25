@@ -6,6 +6,7 @@
 #include "container.h"
 #include "list_container.h"
 #include "vector_container.h"
+#include "class_hierarchies/shape.h"
 
 struct VectorStuct {
     int size;
@@ -92,6 +93,9 @@ int main() {
 
     useVc();
     useLc();
+
+    shapes::Circle c(shapes::Point{1, 2}, 3);
+    std::cout << "First circle at: " << c.center() << " with radius " << c.radius << std::endl;
 
     return mycode::main();
 }
