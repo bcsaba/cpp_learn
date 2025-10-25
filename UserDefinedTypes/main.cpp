@@ -3,6 +3,10 @@
 #include "complex.h"
 #include <cmath>
 
+#include "container.h"
+#include "list_container.h"
+#include "vector_container.h"
+
 struct VectorStuct {
     int size;
     double* elements;
@@ -50,6 +54,25 @@ double sqrt_sum(mycode::Vector& v) {
     return sum;
 }
 
+void use(mycode::Container& c) {
+  std::cout << "---------- Use with type: " << typeid(c).name() << " ----------" << std::endl;
+    const unsigned long sz = c.size();
+
+    for (int i = 0; i != sz; ++i) {
+        std::cout << c[i] << std::endl;
+    }
+}
+
+void useVc() {
+    mycode::Vector_container vc = mycode::Vector_container{11, 12, 13};
+    use(vc);
+}
+
+void useLc() {
+    mycode::List_Container lc = mycode::List_Container {14, 15, 16};
+    use(lc);
+}
+
 int main() {
     // VectorStuct v;
     // read_from_consol_and_sum(10, v.elements);
@@ -66,6 +89,9 @@ int main() {
     v2.push_back(10);
 
     std::cout << sqrt_sum(v2) << " :: " << v2.size() << std::endl;
+
+    useVc();
+    useLc();
 
     return mycode::main();
 }

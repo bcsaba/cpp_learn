@@ -9,8 +9,7 @@ namespace mycode {
     class Container {
     public:
         virtual double operator[](int) = 0;
-        [[nodiscard]] virtual int size() const = 0;
-        // virtual ~Container() {}
+        [[nodiscard]] virtual unsigned long size() const = 0;
         virtual ~Container() = default;
     };
 }
