@@ -191,6 +191,28 @@ void cin_cout_override_example()
     std::cout << phone_entry;
 }
 
+std::vector<Entry> vector_collection_example() {
+  std::vector<Entry> phone_book = {
+    {"David Hume", 123456},
+    {"Karl Popper", 234567},
+    {"Bertrand Arthur William Russel", 354678}
+  };
+
+  for(Entry e; std::cin >> e;) {
+    phone_book.push_back(e);
+  }
+
+  return phone_book;
+}
+
+void print_book(const std::vector<Entry> &books) {
+  std::cout << std::endl << std::endl << "Entries in the phone book:" << std::endl;
+  std::cout << "=========================" << std::endl << std::endl;
+  for(auto book : books) {
+    std::cout << book << std::endl;
+  }
+}
+
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
     // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
@@ -211,6 +233,10 @@ int main() {
     count_x("Hello world", 'l');
 
     cin_cout_override_example();
+
+    std::vector<Entry> phone_book = vector_collection_example();
+    print_book(phone_book);
+
     return 0;
     // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
