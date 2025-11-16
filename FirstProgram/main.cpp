@@ -1,4 +1,7 @@
+#include <format>
 #include <iostream>
+#include <ios>
+#include <iterator>
 #include <vector>
 
 void assignments_and_simple_io() {
@@ -147,6 +150,47 @@ void count_x(char* p, char x) {
     std::cout << std::endl << std::endl;
 }
 
+struct Entry {
+  std::string name;
+  int number;
+};
+
+std::ostream& operator<<(std::ostream &os, const Entry &e) {
+  std::cout << "The given entry is:" << std::endl;
+  return os << "{\"" << e.name << "\", " << e.number << "}" << std::endl;
+}
+
+std::istream& operator>>(std::istream &is, Entry &e) {
+  char c, c2;
+
+  std::cout << "Add a new entry in the form { \"<name>\", <number> }" << std::endl;
+  if(is >> c && c == '{' && is >> c2 && c2 == '"') {
+    std::string name;
+    while(is.get(c) && c != '"') {
+      name += c;
+    }
+
+    if(is >> c && c == ',') {
+      int number = 0;
+      if(is >> number >> c && c == '}') {
+	e = {name, number};
+	return is;
+      }
+    }
+  }
+
+  is.setstate(std::ios_base::failbit);
+  return is;
+}
+
+void cin_cout_override_example()
+{
+    Entry phone_entry;
+
+    std::cin >> phone_entry;
+    std::cout << phone_entry;
+}
+
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
     // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
@@ -165,6 +209,8 @@ int main() {
     increment();
 
     count_x("Hello world", 'l');
+
+    cin_cout_override_example();
     return 0;
     // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
